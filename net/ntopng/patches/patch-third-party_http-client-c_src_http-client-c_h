@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third-party/http-client-c/src/http-client-c.h.orig	Tue Aug 27 17:58:56 2013
++++ third-party/http-client-c/src/http-client-c.h	Tue Aug 27 17:59:52 2013
+@@ -40,7 +40,7 @@
+ #pragma comment(lib, "Ws2_32.lib")
+ #elif defined(linux)
+ #include <sys/socket.h>
+-#elif defined(__FreeBSD__) || defined(__APPLE__) /* ntop */
++#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__APPLE__) /* ntop */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netdb.h>

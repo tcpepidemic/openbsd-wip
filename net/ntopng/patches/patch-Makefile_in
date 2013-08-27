@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.in.orig	Tue Aug 27 18:04:02 2013
++++ Makefile.in	Tue Aug 27 18:04:21 2013
+@@ -27,7 +27,7 @@ ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
+ ZEROMQ_LIB=$(ZEROMQ_HOME)/src/.libs/libzmq.a 
+ ######
+ TARGET = ntopng
+-LIBS = @LDFLAGS@ $(NDPI_LIB) $(LIBPCAP) $(LUAJIT_LIB) $(LIBRRDTOOL_LIB) $(ZEROMQ_LIB) -lxml2 @LINK_OPTS@ @LIBGNUTLS@ @GEOIP_LIB@ -lm -ldl -lpthread
++LIBS = @LDFLAGS@ $(NDPI_LIB) $(LIBPCAP) $(LUAJIT_LIB) $(LIBRRDTOOL_LIB) $(ZEROMQ_LIB) -lxml2 @LINK_OPTS@ @LIBGNUTLS@ @GEOIP_LIB@ -lm -pthread
+ CPPFLAGS = -g -Wall $(CREDIS_INC) $(MONGOOSE_INC) $(NDPI_INC) $(LUAJIT_INC) $(LIBRRDTOOL_INC) $(ZEROMQ_INC) -D SVN_RELEASE="@SVN_RELEASE@" @CPPFLAGS@ -I$(HTTPCLIENT_INC) 
+ ######
+ # ntopng-1.0_1234.x86_64.rpm 

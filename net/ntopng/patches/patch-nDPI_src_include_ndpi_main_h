@@ -1,0 +1,35 @@
+$OpenBSD$
+--- nDPI/src/include/ndpi_main.h.orig	Fri Jun 21 19:55:26 2013
++++ nDPI/src/include/ndpi_main.h	Tue Aug 27 16:02:28 2013
+@@ -38,7 +38,7 @@
+ #include <sys/time.h>
+ #endif
+ 
+-#if 1 && !defined __APPLE__ && !defined __FreeBSD__ && !defined __NetBSD__
++#if 1 && !defined __APPLE__ && !defined __FreeBSD__ && !defined __NetBSD__ && !defined __OpenBSD__
+ 
+ #ifndef __KERNEL__
+ #include <endian.h>
+@@ -59,6 +59,10 @@
+ 
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <pthread.h>
++#endif
++
+ #ifdef WIN32
+ #include <Winsock2.h> /* winsock.h is included automatically */
+ #include <process.h>
+@@ -86,9 +90,9 @@ typedef unsigned __int64 u_int64_t;
+ 
+ #include "linux_compat.h"
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <netinet/in.h>
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <netinet/in_systm.h>
+ #endif
+ #endif

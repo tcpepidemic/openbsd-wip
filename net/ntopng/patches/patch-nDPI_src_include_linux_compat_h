@@ -1,0 +1,12 @@
+$OpenBSD$
+--- nDPI/src/include/linux_compat.h.orig	Sat May 11 16:55:40 2013
++++ nDPI/src/include/linux_compat.h	Tue Aug 27 16:00:32 2013
+@@ -28,7 +28,7 @@
+ 
+ #include "ndpi_define.h"
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <machine/endian.h>
+ 
+ #if _BYTE_ORDER == _LITTLE_ENDIAN

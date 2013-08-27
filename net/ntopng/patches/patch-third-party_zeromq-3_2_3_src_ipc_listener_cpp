@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third-party/zeromq-3.2.3/src/ipc_listener.cpp.orig	Tue Aug 27 17:49:55 2013
++++ third-party/zeromq-3.2.3/src/ipc_listener.cpp	Tue Aug 27 17:50:25 2013
+@@ -196,7 +196,7 @@ zmq::fd_t zmq::ipc_listener_t::accept ()
+     fd_t sock = ::accept (s, NULL, NULL);
+     if (sock == -1) {
+         errno_assert (errno == EAGAIN || errno == EWOULDBLOCK ||
+-            errno == EINTR || errno == ECONNABORTED || errno == EPROTO ||
++            errno == EINTR || errno == ECONNABORTED || errno == EPROTONOSUPPORT ||
+             errno == ENFILE);
+         return retired_fd;
+     }

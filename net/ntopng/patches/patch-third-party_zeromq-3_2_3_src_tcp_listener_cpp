@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third-party/zeromq-3.2.3/src/tcp_listener.cpp.orig	Tue Aug 27 17:50:00 2013
++++ third-party/zeromq-3.2.3/src/tcp_listener.cpp	Tue Aug 27 17:50:36 2013
+@@ -262,7 +262,7 @@ zmq::fd_t zmq::tcp_listener_t::accept ()
+ #else
+     if (sock == -1) {
+         errno_assert (errno == EAGAIN || errno == EWOULDBLOCK ||
+-            errno == EINTR || errno == ECONNABORTED || errno == EPROTO ||
++            errno == EINTR || errno == ECONNABORTED || errno == EPROTONOSUPPORT ||
+             errno == ENOBUFS || errno == ENOMEM || errno == EMFILE ||
+             errno == ENFILE);
+         return retired_fd;
