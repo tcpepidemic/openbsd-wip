@@ -167,7 +167,7 @@ CONFIGURE_STYLE =	gnu
 
 # Overrides for default values
 #
-CFLAGS +=		-I/usr/include/sys
+#CFLAGS +=		-I/usr/include/sys
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
