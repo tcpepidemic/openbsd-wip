@@ -40,7 +40,7 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/kwallet	\
 	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
 	${MODKDE4_DEP_DIR}/pim		\
-	${MODKDE4_DEP_DIR}/printer-manager	\
+	${MODKDE4_DEP_DIR}/print-manager	\
 	${MODKDE4_DEP_DIR}/superkaramba	\
 	${MODKDE4_DEP_DIR}/sweeper	\
 	${MODKDE4_DEP_DIR}/workspace
